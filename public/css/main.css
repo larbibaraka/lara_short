@@ -1,0 +1,94 @@
+.mynav{
+    background-color: #efffe9;
+    border: 1px solid #efffe9 ;
+    border-radius: 0;
+    margin: 0;
+}
+.main-header{
+    background-image: url("../img/header-image.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 0px;
+    height: 562px;
+    width: 100%;
+}
+
+.main-header .url{
+    margin-top: 250px ;
+}
+.main-header .url input{
+    border-radius: 6px;
+}
+.main-header .url .url-enter{
+    background-color: #e71d36;
+    color: white;
+    border: 1px solid #e71d36;
+    border-radius: 6px;
+
+}
+
+.top10{
+    background-color: #2ec4b6;
+    padding: 30px;
+    height:465px;
+}
+.top10 h2{
+    color: white;
+}
+.top10 thead{
+    background-color: white;
+}
+.top10 tbody{
+    background-color: #00a651;
+    color: white;
+}
+.by-network{
+    border-right: solid 2px #2ec4b6;
+}
+.links-signup{
+    display: block;
+    padding: 17px;
+    margin: 15px 0px;
+    color: white;
+    font-size: 28px;
+    text-align: center;
+}
+.links-signup:hover{
+    text-decoration: none;
+    color: #2ec4b6;
+}
+.fb{
+    background-color: #47639E;
+}
+.tw{
+    background-color: #48B3F4;
+}
+.gg{
+    background-color: #DB4437;
+}
+.btn-signup{
+    background-color: #2ec4b6;
+    color: white;
+    border: 1px solid #2ec4b6;
+    border-radius: 6px;
+    padding: 10px 30px;
+}
+.btn-signup:hover{
+    background-color: white;
+    color: #0f0f0f;
+    border: 1px solid #2ec4b6;
+}
+
+.modal-header{
+    background-color: #2ec4b6;
+    border-bottom: 3px solid #2aabd2;
+    color: white;
+}
+.modal-header .modal-title{
+    font-size: 24px;
+    font-weight:bold;
+}
+.modal-body{
+    background-color: #EFFFE9;
+}
