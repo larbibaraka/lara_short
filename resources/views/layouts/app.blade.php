@@ -26,6 +26,8 @@
 
     @yield('header')
 
+    @yield('content')
+
     @yield('top10')
 
     @yield('footer')
