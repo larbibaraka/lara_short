@@ -35,7 +35,42 @@ class UrlController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // validate the request
+
+        $this->validate(request(),[
+            'url' => 'min:10'
+        ]);
+
+        // add to data base
+        //create random id
+        $string = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+
+        $url_id="";
+
+        for($i=0; $i<6; $i++){
+            $url_id .=$string[mt_rand(0,(strlen($string)-1))];
+        }
+        //create the short url
+        $url_short = url('/').'/url/'.$url_id;
+
+        if(auth()->check()){
+            Url::create([
+                "url"=>$request->url,
+                "url_id"=>$url_id,
+                "user_id"=>auth()->user()->id,
+                "url_shorter"=>$url_short
+            ]);
+        }else{
+            Url::create([
+                "url"=>$request->url,
+                "url_id"=>$url_id,
+                "url_shorter"=>$url_short
+
+            ]);
+        }
+
+        //redirect to index
+        return redirect('/')->with('my_url',$url_short);
     }
 
     /**
@@ -44,9 +79,12 @@ class UrlController extends Controller
      * @param  \App\Url  $url
      * @return \Illuminate\Http\Response
      */
-    public function show(Url $url)
+    public function show($id)
     {
-        dd($url);
+        $url=Url::where("url_id","=",$id)->first();
+        $url->visited = $url->visited+1;
+        $url->update();
+        return redirect($url->url);
     }
 
     /**

@@ -11,10 +11,21 @@
                       </span>
                     </div><!-- /input-group -->
                 </form>
-                @if(isset($url_short))
-                    <div class="alert alert-success">
+                <br>
+                @if(session('my_url'))
+                    <div class="alert alert-info">
                     	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                    	<strong>{{$url_short}}</strong>
+                    	<strong><a href="{{ session('my_url') }}">{{ session('my_url') }}</a></strong>
+                    </div>
+                @endif
+
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                              <p>{{$error}}</p>
+                            @endforeach
+                        </ul>
                     </div>
                 @endif
             </div><!-- /.col-lg-6 -->

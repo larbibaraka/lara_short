@@ -9,11 +9,6 @@ use function Sodium\compare;
 
 class IndexController extends Controller
 {
-
-
-
-
-
     /**
      * Display a listing of the resource.
      *
@@ -21,7 +16,9 @@ class IndexController extends Controller
      */
     public function index()
     {
-      return view('welcome');
+        $urls= Url::all();
+        dd($urls);
+        return view('welcome',compact('urls'));
     }
 
     /**
@@ -42,31 +39,6 @@ class IndexController extends Controller
      */
     public function store(Request $request)
     {
-        // validate the request
-
-        $this->validate(request(),[
-           'url' => 'min:10'
-        ]);
-
-        // add to data base
-            //create random id
-            $string = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-
-            $url_id="";
-
-            for($i=0; $i<6; $i++){
-                $url_id .=$string[mt_rand(0,(strlen($string)-1))];
-            }
-            $url_short = url('/').'/'.$url_id;
-
-            Url::create([
-                "url"=>$request->url,
-                "url_id"=>$url_id,
-                "url_shorter"=>$url_short
-
-            ]);
-            //redirect to index
-            return back()->with($url_short);
 
     }
 
@@ -78,8 +50,7 @@ class IndexController extends Controller
      */
     public function show($id)
     {
-        $url=Url::where("url_id","=",$id)->first();
-        return redirect($url->url);
+
     }
 
     /**

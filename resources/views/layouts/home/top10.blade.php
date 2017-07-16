@@ -10,11 +10,15 @@
             </tr>
             </thead>
             <tbody>
-            <tr class="text-center">
-                <td>Larbi Baraka</td>
-                <td>https:\\www.some.go</td>
-                <td>256</td>
-            </tr>
+           @if(!empty($urls))
+               @foreach($urls as $url)
+                <tr class="text-center">
+                    <td>{{$url->user_id}}</td>
+                    <td><a href="{{$url->url}}">{{$url->url}}</a></td>
+                    <td>{{$url->visited}}</td>
+                </tr>
+                @endforeach
+            @endif
             </tbody>
         </table>
     </div>
