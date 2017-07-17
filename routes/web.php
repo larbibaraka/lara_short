@@ -10,4 +10,8 @@ Route::post('/url/','UrlController@store')->name('store_url');
 
 Auth::routes();
 
+
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home/profile', 'UserController@index')->name('home.profile');
+
+

@@ -13,8 +13,12 @@
            @if(!empty($urls))
                @foreach($urls as $url)
                 <tr class="text-center">
-                    <td>{{$url->user_id}}</td>
-                    <td><a href="{{$url->url}}">{{$url->url}}</a></td>
+                    @if($url->user == null)
+                     <td>Anonymous</td>
+                    @else
+                    <td>{{$url->user->name}}</td>
+                    @endif
+                    <td><a href="{{$url->url_shorter}}">{{$url->url_shorter}}</a></td>
                     <td>{{$url->visited}}</td>
                 </tr>
                 @endforeach

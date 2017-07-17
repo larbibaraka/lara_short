@@ -38,7 +38,7 @@ class UrlController extends Controller
         // validate the request
 
         $this->validate(request(),[
-            'url' => 'min:10'
+            'url' => 'min:10|required'
         ]);
 
         // add to data base
@@ -53,7 +53,10 @@ class UrlController extends Controller
         //create the short url
         $url_short = url('/').'/url/'.$url_id;
 
+
+
         if(auth()->check()){
+
             Url::create([
                 "url"=>$request->url,
                 "url_id"=>$url_id,

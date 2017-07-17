@@ -3,11 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Url;
-use function Sodium\compare;
 
-
-class IndexController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +13,7 @@ class IndexController extends Controller
      */
     public function index()
     {
-        $urls= Url::with('user')->get();
-        return view('welcome',compact('urls'));
+        return view("User");
     }
 
     /**
@@ -38,7 +34,7 @@ class IndexController extends Controller
      */
     public function store(Request $request)
     {
-
+        //
     }
 
     /**
@@ -49,7 +45,7 @@ class IndexController extends Controller
      */
     public function show($id)
     {
-
+        //
     }
 
     /**

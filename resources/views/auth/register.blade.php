@@ -66,7 +66,17 @@
                                     Register
                                 </button>
                             </div>
+
                         </div>
+                        <div class="form-group">
+                            <div class="col-md-6 col-md-offset-4">
+                                <a class="btn btn-success" href="{{ route('login') }}">
+                                    Already have an Account ?
+                                </a>
+                            </div>
+                        </div>
+
+
                     </form>
                 </div>
             </div>
