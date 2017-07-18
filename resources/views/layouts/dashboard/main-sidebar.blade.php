@@ -16,17 +16,16 @@
         <ul class="sidebar-menu">
 
             <!-- Optionally, you can add icons to the links -->
-            <li class="active"><a href="#"><i class="fa fa-link"></i> <span>Link</span></a></li>
-            <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
+            <li class="active"><a href="#"><i class="fa fa-link"></i> <span>my urls</span></a></li>
+            <li><a href="#"><i class="fa fa-bell-o"></i> <span>settings</span></a></li>
             <li class="treeview">
-                <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span>
+                <a href="#"><i class="fa fa-dollar"></i> <span>profits</span>
                     <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="#">Link in level 2</a></li>
-                    <li><a href="#">Link in level 2</a></li>
+                    <li><a href="#"><i class="fa fa-paypal"></i> wallet</a></li>
                 </ul>
             </li>
         </ul>
