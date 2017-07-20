@@ -11,6 +11,8 @@
                       </span>
                     </div><!-- /input-group -->
                 </form>
+
+                <div id="app"></div>
                 <br>
                 @if(session('my_url'))
                     <div class="alert alert-info">
